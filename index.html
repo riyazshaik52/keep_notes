@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Keep notes app</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <button id="search" aria-label="Search">🔍︎</button>
+        <input id="searchInput" type="text" placeholder="Search notes" />
+      </div>
+    </div>
+  </header>
+
+  <section class="sidebar" aria-label="Sidebar">
+    <h1>Notes</h1>
+    <ul>
+      <li><button id="add-form" title="Add note">+</button></li>
+    </ul>
+  </section>
+
+  <main>
+    <div class="main-content">
+      <h1>Recent Notes</h1>
+
+      <div class="cards" id="notesContainer">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal (add/edit) -->
+  <div id="noteModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitleLabel">
+      <button class="close-btn" aria-label="Close modal">&times;</button>
+
+      <h2 id="modalTitleLabel">Add New Note</h2>
+
+      <label for="modalTitle">Title</label>
+      <input id="modalTitle" type="text" placeholder="Enter note title" />
+
+      <label for="modalText">Description</label>
+      <textarea id="modalText" placeholder="Write your note here..."></textarea>
+
+      <div class="modal-actions" style="display:flex;gap:8px;margin-top:12px;">
+        <button id="saveNoteBtn">Save Note</button>
+        <button id="deleteNoteBtn" type="button" style="background:#ff4d4d;color:white;display:none;">Delete</button>
+        <button id="cancelNoteBtn" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
